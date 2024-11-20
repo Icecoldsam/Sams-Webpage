@@ -1,83 +1,107 @@
-* {
-    box-sizing: border-box;
+/* styles.css */
+
+/* Reset and General Styles */
+body, html {
     margin: 0;
     padding: 0;
-}
-
-body {
     font-family: Arial, sans-serif;
+    background: #f4f8fb;
+    color: #333;
     line-height: 1.6;
-    background-color: #f0f0f0;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 15px;
 }
 
+/* Header Styles */
 header {
-    background-color: #333;
+    background: #004080;
     color: #fff;
-    padding: 10px 0;
+    padding: 15px 0;
     text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    font-size: 5rem;
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 1.4;
 }
 
 .language-selector {
-    text-align: center;
     margin-top: 10px;
 }
 
 .language-selector button {
-    margin: 0 5px;
-    padding: 8px 16px;
-    background-color: #555;
+    background: #0066cc;
     color: #fff;
-    border: 10px;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s;
 }
 
+.language-selector button:hover {
+    background: #005bb5;
+}
+
+/* Main Content Styles */
 main {
-    margin-top: 20px;
+    padding: 20px 0;
+    text-align: center;
+}
+
+#intro-container p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
 }
 
 button {
-    display: -moz-box;
-    margin: 10px bottom;
-    padding: 10px 20px;
-    background-color: #007bff;
+    background: #007bff;
     color: #fff;
     border: none;
+    padding: 12px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
     cursor: pointer;
-    border-radius: 20px;
+    margin: 10px;
+    transition: background 0.3s, transform 0.2s;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+.hide {
+    display: none;
 }
 
 .loading-container {
-    text-align: center;
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
 .loading-bar {
     width: 100%;
-    background-color: #ddd;
-    height: 20px;
+    background: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
     margin-bottom: 10px;
     position: relative;
-    display: inline-block;
+    height: 20px;
 }
 
 .loading-bar .bar {
-    background-color: #007bff;
+    background: #007bff;
     height: 100%;
     width: 0;
+    transition: width 0.5s ease-in-out;
 }
 
 .loading-bar .percentage {
@@ -85,30 +109,94 @@ button:hover {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    color: #333;
-}
-
-.hide {
-    display: none;
-}
-
-footer {
-    background-color: #333;
     color: #fff;
-    padding: 10px 0;
+    font-weight: bold;
+}
+
+/* Results Section */
+#result-container {
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px auto;
+}
+
+#ai-result {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Footer Styles */
+footer {
+    background: #004080;
+    color: #fff;
+    padding: 15px 0;
     text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    margin-top: 20px;
+}
+
+footer p {
+    font-size: 0.9rem;
+    margin: 5px 0;
 }
 
 footer a {
-    color: #fff;
+    color: #ffd700;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
 }
 
-footer a:hover {
-    color: #007bff;
+footer img {
+    width: 24px;
+    margin: 10px 0;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+footer img:hover {
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.2rem;
+        line-height: 1.2;
+    }
+
+    .language-selector button {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+        margin: 5px;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 10px 12px;
+    }
+
+    footer p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    button {
+        width: 90%;
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .language-selector {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .language-selector button {
+        width: 30%;
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
 }
